@@ -16,6 +16,7 @@ def is_palindrome(s: str) -> bool:
 
     Returns:
         True if the string is a palindrome, False otherwise.
+        Returns False for non-string inputs.
 
     Examples:
         >>> is_palindrome("A man, a plan, a canal: Panama")
@@ -27,6 +28,10 @@ def is_palindrome(s: str) -> bool:
         >>> is_palindrome("a")
         True
     """
+    # Handle non-string inputs gracefully
+    if not isinstance(s, str):
+        return False
+    
     # Filter to only alphanumeric characters and convert to lowercase
     cleaned = [char.lower() for char in s if char.isalnum()]
 
