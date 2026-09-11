@@ -74,13 +74,12 @@ class TestPalindrome(unittest.TestCase):
 
     def test_invalid_input_types(self):
         """Test behavior with invalid input types."""
-        # These should raise TypeError when passed to is_palindrome
-        with self.assertRaises(AttributeError):
-            is_palindrome(None)
-        with self.assertRaises(TypeError):
-            is_palindrome(123)
-        with self.assertRaises(TypeError):
-            is_palindrome([])
+        # These should return False for non-string inputs
+        self.assertFalse(is_palindrome(None))
+        self.assertFalse(is_palindrome(123))
+        self.assertFalse(is_palindrome([]))
+        self.assertFalse(is_palindrome({}))
+        self.assertFalse(is_palindrome(set()))
 
 
 if __name__ == "__main__":
